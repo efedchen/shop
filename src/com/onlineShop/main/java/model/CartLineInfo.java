@@ -1,3 +1,5 @@
+package com.onlineShop.main.java.model;
+
 public class CartLineInfo{
     private ProductInfo productInfo;
     private int quantity;

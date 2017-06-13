@@ -1,3 +1,8 @@
+package com.onlineShop.main.java.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CartInfo {
     private int orderNum;
     private CustomerInfo customerInfo;
@@ -22,23 +27,22 @@ public class CartInfo {
         this.customerInfo = customerInfo;
     }
 
-    public List<CartLineInfo> getCartLines
-
+    public List<CartLineInfo> getCartLines()
     {
         return this.cartLines;
     }
 
     private CartLineInfo findLineByCode(String code) {
-        for (CartLineInfo info : this.cartLines) {
-            if (line.getProductinfo().getCode().equals(code)) {
+        for (CartLineInfo line : this.cartLines) {
+            if (line.getProductInfo().getCode().equals(code)) {
                 return line;
             }
         }
         return null;
     }
 
-    private void addProduct(ProductIndo productIndo, int quantity) {
-        CartLineInfo line = this.findLineByCode(productIndo.getCode());
+    private void addProduct(ProductInfo productInfo, int quantity) {
+        CartLineInfo line = this.findLineByCode(productInfo.getCode());
 
         if (line == null) {
             line = new CartLineInfo();
@@ -57,15 +61,27 @@ public class CartInfo {
     public void validate() {
     }
 
+    public void updateProduct(String code, int quantity){
+        CartLineInfo line = this.findLineByCode(code);
+
+        if(line != null){
+            if(quantity <= 0){
+                this.cartLines.remove(line);
+            }else{
+                line.setQuantity(quantity);
+            }
+        }
+    }
+
     public void removeProduct(ProductInfo productInfo) {
         CartLineInfo line = this.findLineByCode(productInfo.getCode());
         if (line != null) {
-            this.cartLine.remove(line);
+            this.cartLines.remove(line);
         }
     }
 
     public boolean isEmpty() {
-        return this.cartLine.isEmpty();
+        return this.cartLines.isEmpty();
     }
 
     public boolean isValidCustomer() {
@@ -85,7 +101,7 @@ public class CartInfo {
         for (CartLineInfo line : this.cartLines) {
             total += line.getAmount();
         }
-        return total
+        return total;
     }
 
     public void updateQuantity(CartInfo cartForm) {

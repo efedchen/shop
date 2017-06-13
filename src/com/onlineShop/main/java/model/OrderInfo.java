@@ -1,3 +1,8 @@
+package com.onlineShop.main.java.model;
+
+import java.util.Date;
+import java.util.List;
+
 public class OrderInfo {
 
     private String id;

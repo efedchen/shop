@@ -1,3 +1,5 @@
+package com.onlineShop.main.java.model;
+
 public class OrderDetailInfo {
     private String id;
 
@@ -11,7 +13,7 @@ public class OrderDetailInfo {
     public OrderDetailInfo() {
     }
 
-    public OrderDetailInfo(Sting id, Sttring productCode, String productName,
+    public OrderDetailInfo(String id, String productCode, String productName,
                            int quantity, double price, double amount) {
         this.id = id;
         this.productCode = productCode;

@@ -1,3 +1,5 @@
+package com.onlineShop.main.java.model;
+
 public class CustomerInfo{
     private String name;
     private String address;

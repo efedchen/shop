@@ -1,3 +1,9 @@
+package com.onlineShop.main.java.model;
+
+import com.onlineShop.main.java.entity.Product;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+
 public class ProductInfo{
     private String code;
     private String name;
@@ -5,7 +11,7 @@ public class ProductInfo{
 
     private boolean newProduct;
 
-    private CommonMultipartFile fileData;
+    private CommonsMultipartFile fileData;
 
     public ProductInfo(){}
 
@@ -47,11 +53,11 @@ public class ProductInfo{
         this.newProduct = newProduct;
     }
 
-    public CommonMultipartFile getFileData() {
+    public CommonsMultipartFile getFileData() {
         return fileData;
     }
 
-    public void setFileData(CommonMultipartFile fileData) {
+    public void setFileData(CommonsMultipartFile fileData) {
         this.fileData = fileData;
     }
 }

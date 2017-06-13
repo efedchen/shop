@@ -1,3 +1,12 @@
+package com.onlineShop.main.java.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.ScrollMode;
+import org.hibernate.ScrollableResults;
+
 public class PaginationResult<E>{
     private int totalRecords;
     private int currentPage;
