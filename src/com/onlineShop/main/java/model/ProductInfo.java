@@ -16,9 +16,9 @@ public class ProductInfo{
     public ProductInfo(){}
 
     public ProductInfo(Product product) {
-        this.code = code;
-        this.name = name;
-        this.price = price;
+        this.code = product.getCode();
+        this.name = product.getName();
+        this.price = product.getPrice();
     }
 
     public String getCode() {
