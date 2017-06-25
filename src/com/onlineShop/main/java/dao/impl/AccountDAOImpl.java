@@ -13,7 +13,6 @@ public class AccountDAOImpl {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Override
     public Account findAccount(String userName ) {
         Session session = sessionFactory.getCurrentSession();
         Criteria crit = session.createCriteria(Account.class);
