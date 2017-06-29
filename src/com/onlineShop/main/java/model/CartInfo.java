@@ -41,7 +41,7 @@ public class CartInfo {
         return null;
     }
 
-    private void addProduct(ProductInfo productInfo, int quantity) {
+    public void addProduct(ProductInfo productInfo, int quantity) {
         CartLineInfo line = this.findLineByCode(productInfo.getCode());
 
         if (line == null) {
