@@ -7,4 +7,4 @@ public class SpringSecurityInitializer extends AbstractSecurityWebApplicationIni
 
     // Do nothing
 
-}}
+}
